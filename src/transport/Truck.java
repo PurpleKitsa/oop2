@@ -18,7 +18,10 @@ public class Truck extends Transport<DriverC> {
 
     @Override
     public void printType() {
-
+            if (loadCapacity == null) {
+                System.out.println("Данных по транспортному средству недостаточно");
+            }
+            System.out.println("Грузоподъёмность: " + loadCapacity);
     }
 
     @Override
@@ -39,7 +42,7 @@ public class Truck extends Transport<DriverC> {
 
     }
 
-    private enum LoadCapacity {
+    public enum LoadCapacity {
         N1(0, 3.5f),
         N2(3.5f, 12f),
         N3 (12, 0);

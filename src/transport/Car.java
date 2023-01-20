@@ -41,7 +41,7 @@ public BodyType bodyType;
     }
 
 
-    private enum BodyType {
+    public enum BodyType {
         SEDAN("Седан"),
         HATCHBACK("Хетчбек"),
         COUPE("Купе"),

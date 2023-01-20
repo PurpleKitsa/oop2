@@ -48,5 +48,9 @@ public class Main {
         private static void printInfo (Transport < ? > transport){
             System.out.println("Водитель " + transport.getDriver().getName() + " управляет автомобилем " + transport.getBrand() + " и будет участвовать в заезде");
         }*/
+        System.out.println(Truck.LoadCapacity.N1);
+        System.out.println(Car.BodyType.SEDAN);
+        System.out.println(Bus.Capacity.BIG);
+
     }
 }

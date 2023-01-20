@@ -2,7 +2,8 @@ package transport;
 
 public class Bus extends Transport <DriverD> {
     private static Capacity capacity;
-    public Bus(String brand, String model, double engineVolume, DriverD driver,Capacity capacity) {
+
+    public Bus(String brand, String model, double engineVolume, DriverD driver, Capacity capacity) {
         super(brand, model, engineVolume, driver);
         this.capacity = capacity;
     }
@@ -10,16 +11,13 @@ public class Bus extends Transport <DriverD> {
     public void startMoved() {
         System.out.println("Автобус " + getBrand() + " начал движение");
     }
+
     public void finishMoved() {
         System.out.println("Автобус " + getBrand() + " закончил движение");
     }
 
-    @Override
-    public void printType() {
 
-    }
-
-    private enum Capacity {
+    public enum Capacity {
         VERY_SMALL(0, 10),
         SMALL(0, 25),
         AVERAGE(40, 50),
@@ -50,33 +48,30 @@ public class Bus extends Transport <DriverD> {
             String upp = " до " + maxPlaces;
             if (maxPlaces == 0) {
                 upp = "";
-
             }
             return "Вместительность -" + low + upp + " мест.";
         }
-            public void printType() {
-                if (capacity == null) {
-                    System.out.println("Данных по транспортному средству недостаточно");
-                }
-                System.out.println("Мест: " + capacity);
-            }
-        }
+    }
     @Override
     public void pitStop() {
         System.out.println("Пит-стоп у автобуса " + getBrand());
-
     }
 
     @Override
     public void bestTime() {
         System.out.println("Лучшее время круга у автобуса" + getBrand());
-
     }
 
     @Override
     public void maxSpeed() {
         System.out.println("Максимальная скорость у автобуса " + getBrand());
-
+    }
+    @Override
+    public void printType() {
+        if (capacity == null) {
+            System.out.println("Данных по транспортному средству недостаточно");
+        }
+        System.out.println("Мест: " + capacity);
     }
 }
 
