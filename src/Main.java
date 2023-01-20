@@ -1,25 +1,52 @@
-import transport.Bus;
-import transport.Car;
+import transport.*;
 
 public class Main {
 
     public static void main(String[] args) {
-        Car lada = new Car(" Lada ", " Granta ", 1.7, " Жёлтый ", 2015, " Россия ","Ручная", " Cедан ","a000a12",4,false,false,120);
-        Car audi = new Car(" Audi ", " A8 50L TDI quattro ", 3.0, " Чёрный ", 2020, " Германия ","Автомат"," Cедан ","ab001aa11",5,true,false,220);
-        Car bmw = new Car(" BMW ", " Z8 ", 3.0, " Чёрный ", 2021, " Германия ","Ручная"," Cедан ","b000aa12",5,true,true,170);
-        Car kia = new Car(" Kia ", " Sportage 4-го поколения ", 2.4, " Красный ", 2018, " Южная  Корея "," Ручная ","Внедорожник","c123ab12",4,false,true,190);
-        Car hyundai = new Car(" Hyundai ", " Avante ", 1.6, " Оранжевый " , 2016, " Южная Корея ","Ручная", " Cедан ","b020a17",4,false,false,150);
-        System.out.println(audi);
-        System.out.println(bmw);
-        System.out.println(kia);
-        System.out.println(hyundai);
-        System.out.println(lada);
-        Bus ladaB= new Bus("Lada","Bus",2002,"Россия","Беылй",120);
-        Bus gazel = new Bus("Gazel","Bus",2000,"Россия","Красный",150);
-        Bus fiat  = new Bus("fiat","Bus",1999,"Италия","Жёлтый",200);
-        System.out.println(ladaB);
-        System.out.println(gazel);
-        System.out.println(fiat);
+            DriverB driverB = new DriverB("Алёшин Михаил Петрович", true,5);
+            DriverB driverB2 = new DriverB("",true,6);
+            DriverB driverB3 = new DriverB("",true,6);
+            DriverB driverB4 = new DriverB("",true,6);
+            Car lada = new Car("lada ", "Vesta", 1.6, driverB);
+            Car fiat = new Car("fiat", "turbo", 2.6, driverB2);
+            Car porshe = new Car("porshe", "sport", 3.0, driverB3);
+            Car audi = new Car("audi", "nitro", 3.1, driverB3);
+            System.out.println(lada);
+            System.out.println(fiat);
+            System.out.println(porshe);
+            System.out.println(audi);
 
+            DriverD driverD = new DriverD("",true,6);
+            DriverD driverD2 = new DriverD("",true,6);
+            DriverD driverD3 = new DriverD("",true,6);
+            DriverD driverD4 = new DriverD("",true,6);
+            Bus ladaB = new Bus("lada", "Speed", 1.8, driverD);
+            Bus mazda = new Bus("mazda", "GTR", 2.0, driverD2);
+            Bus nissan = new Bus("nissan", "Sport 2.0", 2.2, driverD3);
+            Bus mitshubishi = new Bus("mitshubishi", "drift", 2.0, driverD4);
+
+            System.out.println(ladaB);
+            System.out.println(mazda);
+            System.out.println(nissan);
+            System.out.println(mitshubishi);
+
+            DriverC driverC = new DriverC("",true,6);
+            DriverC driverC2 = new DriverC("",true,6);
+            DriverC driverC3 = new DriverC("",true,6);
+            DriverC driverC4 = new DriverC("",true,6);
+            Truck toyota = new Truck("toyota", "cube", 3.7, driverC);
+            Truck bmw = new Truck("bmw", "legacy", 4.0, driverC2);
+            Truck jeep = new Truck("jeep", "ultra", 3.9, driverC3);
+            Truck ferrari = new Truck("ferrari", "musctang", 4.2, driverC4);
+
+            System.out.println(toyota);
+            System.out.println(bmw);
+            System.out.println(jeep);
+            System.out.println(ferrari);
+            printInfo(lada);
+        }
+        private static void printInfo (Transport < ? > transport){
+            System.out.println("Водитель " + transport.getDriver().getName() + " управляет автомобилем " + transport.getBrand() + " и будет участвовать в заезде");
+        }
     }
 }
