@@ -3,7 +3,7 @@ import transport.*;
 public class Main {
 
     public static void main(String[] args) {
-            DriverB driverB = new DriverB("Алёшин Михаил Петрович", true,5);
+    /*      DriverB driverB = new DriverB("Алёшин Михаил Петрович", true,5);
             DriverB driverB2 = new DriverB("",true,6);
             DriverB driverB3 = new DriverB("",true,6);
             DriverB driverB4 = new DriverB("",true,6);
@@ -34,7 +34,7 @@ public class Main {
             DriverC driverC2 = new DriverC("",true,6);
             DriverC driverC3 = new DriverC("",true,6);
             DriverC driverC4 = new DriverC("",true,6);
-            Truck toyota = new Truck("toyota", "cube", 3.7, driverC);
+            Truck toyota = new Truck("toyota", "cube", 3.7, driverC,);
             Truck bmw = new Truck("bmw", "legacy", 4.0, driverC2);
             Truck jeep = new Truck("jeep", "ultra", 3.9, driverC3);
             Truck ferrari = new Truck("ferrari", "musctang", 4.2, driverC4);
@@ -47,6 +47,6 @@ public class Main {
         }
         private static void printInfo (Transport < ? > transport){
             System.out.println("Водитель " + transport.getDriver().getName() + " управляет автомобилем " + transport.getBrand() + " и будет участвовать в заезде");
-        }
+        }*/
     }
 }

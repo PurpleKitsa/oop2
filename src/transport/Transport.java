@@ -54,6 +54,8 @@ public abstract class Transport <D extends Driver> implements competing {
 
     public abstract void startMoved();
     public abstract void finishMoved();
+    public abstract void printType();
 
 }
+
 
