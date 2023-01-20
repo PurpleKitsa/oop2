@@ -1,75 +1,59 @@
 package transport;
 
-public class Transport {
-
+public abstract class Transport <D extends Driver> implements competing {
     private final String brand;
     private final String model;
-    private final int year;
-    private final String country;
-    private String color;
-    private int maxSpeed;
+    private double engineVolume;
+    private D driver;
 
-    public Transport(String brand, String model, int year, String country, String color, int maxSpeed) {
+
+    public Transport(String brand, String model, double engineVolume, D driver) {
+        this.brand = brand;
         if (brand == null) {
-            this.brand = "default";
-        } else {
-            this.brand = brand;
+            brand = "default";
         }
+        this.model = model;
         if (model == null) {
-            this.model = "default";
-        } else {
-            this.model = model;
+            model = "default";
         }
-        if (year <= 0) {
-            this.year = 2000;
-        } else {
-            this.year = year;
-        }
-        if (country == null) {
-            this.country = "default";
-        } else {
-            this.country = country;
-        }
-        setColor(color);
-        this.maxSpeed = maxSpeed;
+        setEngineVolume(engineVolume);
     }
 
+    public String getBrand() {
+        return brand;
+    }
     public String getModel() {
         return model;
     }
 
-    public int getYear() {
-        return year;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        if (color == null) {
-            this.color = "Белый";
-        } else {
-            this.color = color;
+    public double getEngineVolume() {
+            return engineVolume;
         }
-    }
 
-    public int getMaxSpeed() {
-        return maxSpeed;
-    }
-
-    public void setMaxSpeed(int maxSpeed) {
-        if (maxSpeed <= 0) {
-            maxSpeed = 200;
+        public void setEngineVolume(double engineVolume) {
+            if (engineVolume <= 0) {
+                engineVolume = 1.5;
+            }
+            this.engineVolume = engineVolume;
         }
-        this.maxSpeed = maxSpeed;
+
+    public D getDriver() {
+        return driver;
+    }
+
+    public void setDriver(D driver) {
+        this.driver = driver;
     }
 
     public String toString() {
-        return " Марка машины " +brand + " Модель " + model + " Год выпуска " + year + " Страна "+ country + " Цвет " +color + " Максимальная скорость " + maxSpeed;
+        return
+                " Марка, " + brand +
+                " Модель, " + model +
+                " Мощность двигателя, " + engineVolume;
     }
+
+    public abstract void startMoved();
+    public abstract void finishMoved();
+
 }
+
