@@ -1,6 +1,6 @@
 package transport;
 
-public interface competing {
+public interface Competing {
     void pitStop();
     void bestTime();
     void maxSpeed();

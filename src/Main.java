@@ -51,6 +51,5 @@ public class Main {
         System.out.println(Truck.LoadCapacity.N1);
         System.out.println(Car.BodyType.SEDAN);
         System.out.println(Bus.Capacity.BIG);
-
     }
 }

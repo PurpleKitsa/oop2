@@ -3,7 +3,7 @@ package transport;
 import java.sql.SQLOutput;
 
 public class Car extends Transport <DriverB> {
-public BodyType bodyType;
+private BodyType bodyType;
 
     public Car(String brand, String model, double engineVolume, DriverB driver,BodyType bodyType) {
         super(brand, model, engineVolume, driver);
@@ -41,6 +41,7 @@ public BodyType bodyType;
     }
 
 
+
     public enum BodyType {
         SEDAN("Седан"),
         HATCHBACK("Хетчбек"),
@@ -67,6 +68,10 @@ public BodyType bodyType;
             return bodyType;
         }
 
+    }
+    @Override
+    public void passDiagnostics() {
+        System.out.println("Легковой авто " + getModel() + "проходит диагностику");
     }
 }
 

@@ -38,5 +38,10 @@ public abstract class Driver {
     public abstract void startMove();
     public abstract void stopMove();
     public abstract void refuel();
+
+    @Override
+    public String toString() {
+        return "Водитель - " + name + ". Водительское удостоверение - " + (driverLicense ? "есть" : "нету") + ". Стаж вождения " + experience + ".";
+    }
 }
 

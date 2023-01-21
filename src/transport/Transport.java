@@ -1,10 +1,11 @@
 package transport;
 
-public abstract class Transport <D extends Driver> implements competing {
+public abstract class Transport <D extends Driver> implements Competing {
     private final String brand;
     private final String model;
     private double engineVolume;
     private D driver;
+
 
 
     public Transport(String brand, String model, double engineVolume, D driver) {
@@ -55,6 +56,7 @@ public abstract class Transport <D extends Driver> implements competing {
     public abstract void startMoved();
     public abstract void finishMoved();
     public abstract void printType();
+    public abstract void passDiagnostics();
 
 }
 

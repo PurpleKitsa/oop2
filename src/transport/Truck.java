@@ -1,7 +1,7 @@
 package transport;
 
 public class Truck extends Transport<DriverC> {
-    private static LoadCapacity loadCapacity;
+    private LoadCapacity loadCapacity;
 
     public Truck(String brand, String model, double engineVolume, DriverC driver, LoadCapacity loadCapacity) {
         super(brand, model, engineVolume, driver);
@@ -17,18 +17,11 @@ public class Truck extends Transport<DriverC> {
     }
 
     @Override
-    public void printType() {
-            if (loadCapacity == null) {
-                System.out.println("Данных по транспортному средству недостаточно");
-            }
-            System.out.println("Грузоподъёмность: " + loadCapacity);
-    }
-
-    @Override
     public void pitStop() {
         System.out.println("Пит-стоп у грузовика " + getBrand());
 
     }
+
 
     @Override
     public void bestTime() {
@@ -45,19 +38,23 @@ public class Truck extends Transport<DriverC> {
     public enum LoadCapacity {
         N1(0, 3.5f),
         N2(3.5f, 12f),
-        N3 (12, 0);
+        N3(12, 0);
         private final float lowerBound;
         private final float upperBound;
+
         LoadCapacity(float lowerBound, float upperBound) {
             this.lowerBound = lowerBound;
             this.upperBound = upperBound;
         }
+
         public float getLowerBound() {
             return lowerBound;
         }
+
         public float getUpperBound() {
             return upperBound;
         }
+
         public String toString() {
             String low = " от " + lowerBound;
             if (lowerBound == 0) {
@@ -69,6 +66,7 @@ public class Truck extends Transport<DriverC> {
             }
             return "Грузоподъёмность -" + low + upp + " тонн.";
         }
+    }
         public void printType() {
             if (loadCapacity == null) {
                 System.out.println("Данных по транспортному средству недостаточно");
@@ -83,6 +81,9 @@ public class Truck extends Transport<DriverC> {
                 loadCapacity = LoadCapacity.N1;
             }
         }
+    @Override
+    public void passDiagnostics() {
+        System.out.println("Грузовик " + getModel() + " проходит диагностику");
     }
 }
 
