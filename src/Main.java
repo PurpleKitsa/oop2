@@ -48,8 +48,15 @@ public class Main {
         private static void printInfo (Transport < ? > transport){
             System.out.println("Водитель " + transport.getDriver().getName() + " управляет автомобилем " + transport.getBrand() + " и будет участвовать в заезде");
         }*/
-        System.out.println(Truck.LoadCapacity.N1);
-        System.out.println(Car.BodyType.SEDAN);
-        System.out.println(Bus.Capacity.BIG);
+       // System.out.println(Truck.LoadCapacity.N1);
+       // System.out.println(Car.BodyType.SEDAN);
+        // System.out.println(Bus.Capacity.BIG);
+        DriverB driverB = new DriverB("Алёшин Михаил Петрович",true,6);
+        Car lada = new Car("lada ", "Vesta", 1.6, driverB, Car.BodyType.SEDAN);
+        try {
+            lada.passDiagnostics();
+        } catch (DiagnosticFailedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

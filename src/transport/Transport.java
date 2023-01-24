@@ -56,7 +56,7 @@ public abstract class Transport <D extends Driver> implements Competing {
     public abstract void startMoved();
     public abstract void finishMoved();
     public abstract void printType();
-    public abstract void passDiagnostics();
+    public abstract boolean passDiagnostics() throws  DiagnosticFailedException;
 
 }
 

@@ -75,8 +75,8 @@ public class Bus extends Transport <DriverD> {
         System.out.println("Мест: " + capacity);
     }
     @Override
-    public void passDiagnostics() {
-        throw new UnsupportedOperationException("Автобусы не могут проходить диганостику!");
+    public boolean passDiagnostics() {
+        return false;
     }
 }
 

@@ -82,8 +82,12 @@ public class Truck extends Transport<DriverC> {
             }
         }
     @Override
-    public void passDiagnostics() {
-        System.out.println("Грузовик " + getModel() + " проходит диагностику");
+    public boolean passDiagnostics() throws DiagnosticFailedException {
+        if (getDriver() != null && getDriver().isDriverLicense()) {
+            return true;
+        }else {
+            throw new DiagnosticFailedException();
+        }
     }
 }
 

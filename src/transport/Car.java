@@ -70,9 +70,14 @@ private BodyType bodyType;
 
     }
     @Override
-    public void passDiagnostics() {
-        System.out.println("Легковой авто " + getModel() + "проходит диагностику");
+    public boolean passDiagnostics() throws DiagnosticFailedException {
+        if (getDriver() != null && getDriver().isDriverLicense()) {
+            return true;
+        }else {
+            throw new DiagnosticFailedException();
+        }
     }
 }
+
 
 
