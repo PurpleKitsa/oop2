@@ -1,5 +1,8 @@
 import transport.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -48,15 +51,35 @@ public class Main {
         private static void printInfo (Transport < ? > transport){
             System.out.println("Водитель " + transport.getDriver().getName() + " управляет автомобилем " + transport.getBrand() + " и будет участвовать в заезде");
         }*/
-       // System.out.println(Truck.LoadCapacity.N1);
-       // System.out.println(Car.BodyType.SEDAN);
+        // System.out.println(Truck.LoadCapacity.N1);
+        // System.out.println(Car.BodyType.SEDAN);
         // System.out.println(Bus.Capacity.BIG);
-        DriverB driverB = new DriverB("Алёшин Михаил Петрович",true,6);
+        DriverB driverB3 = new DriverB("Иванов Олег Николаевич", true, 4);
+        Car bmw = new Car("bmw", "legacy", 4.0, driverB3, Car.BodyType.COUPE);
+        DriverB driverB = new DriverB("Алёшин Михаил Петрович", true, 6);
         Car lada = new Car("lada ", "Vesta", 1.6, driverB, Car.BodyType.SEDAN);
-        try {
+       /* try {
             lada.passDiagnostics();
         } catch (DiagnosticFailedException e) {
             throw new RuntimeException(e);
+        }*/
+        Mechanic mec1 = new Mechanic("Иванов Иван Иванович ", " Быстрый ремонт");
+        Mechanic mec2 = new Mechanic("Петров Петр Петрович ", " Любой ремонт");
+        Mechanic mec3 = new Mechanic("Васильев Василий Васильевич ", " Быстрый ремонт");
+
+        lada.addMechanic(mec1);
+        lada.addMechanic(mec2);
+        bmw.addMechanic(mec1);
+
+        List<Transport<?>> mechAndDriver = new ArrayList<>();
+
+        mechAndDriver.add(lada);
+        mechAndDriver.add(bmw);
+
+        for (Transport<?> transport : mechAndDriver) {
+            System.out.println(transport + " " + transport.getDriver() + " " + transport.getMechanics());
         }
     }
 }
+
+

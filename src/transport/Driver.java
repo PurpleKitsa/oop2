@@ -40,8 +40,10 @@ public abstract class Driver {
     public abstract void refuel();
 
     @Override
+    /* public String toString() {
+     return "Водитель - " + name + ". Водительское удостоверение - " + (driverLicense ? "есть" : "нету") + ". Стаж вождения " + experience + "."; */
     public String toString() {
-        return "Водитель - " + name + ". Водительское удостоверение - " + (driverLicense ? "есть" : "нету") + ". Стаж вождения " + experience + ".";
+    return "Водитель - " + name;
     }
 }
 

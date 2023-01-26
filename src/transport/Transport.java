@@ -1,10 +1,14 @@
 package transport;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Transport <D extends Driver> implements Competing {
     private final String brand;
     private final String model;
     private double engineVolume;
     private D driver;
+    private final List<Mechanic> mechanics = new ArrayList<>();
 
 
 
@@ -18,6 +22,13 @@ public abstract class Transport <D extends Driver> implements Competing {
             model = "default";
         }
         setEngineVolume(engineVolume);
+    }
+
+    public List<Mechanic> getMechanics() {
+        return mechanics;
+    }
+    public void addMechanic(Mechanic mechanic) {
+        mechanics.add(mechanic);
     }
 
     public String getBrand() {
