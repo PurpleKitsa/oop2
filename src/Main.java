@@ -1,16 +1,13 @@
 import transport.*;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Main {
 
     public static void main(String[] args) {
-         DriverB driverB = new DriverB("Алёшин Михаил Петрович", true,5);
+    //     DriverB driverB = new DriverB("Алёшин Михаил Петрович", true,5);
             DriverB driverB2 = new DriverB("",true,6);
-            DriverB driverB3 = new DriverB("",true,6);
+    //        DriverB driverB3 = new DriverB("",true,6);
             DriverB driverB4 = new DriverB("",true,6);
     /*      Car lada = new Car("lada ", "Vesta", 1.6, driverB);
             Car fiat = new Car("fiat", "turbo", 2.6, driverB2);
@@ -55,20 +52,21 @@ public class Main {
         }
         // System.out.println(Truck.LoadCapacity.N1);
         // System.out.println(Car.BodyType.SEDAN);
-        // System.out.println(Bus.Capacity.BIG);
+        // System.out.println(Bus.Capacity.BIG); */
         DriverB driverB3 = new DriverB("Иванов Олег Николаевич", true, 4);
         Car bmw = new Car("bmw", "legacy", 4.0, driverB3, Car.BodyType.COUPE);
         DriverB driverB = new DriverB("Алёшин Михаил Петрович", true, 6);
         Car lada = new Car("lada ", "Vesta", 1.6, driverB, Car.BodyType.SEDAN);
-       try {
+    /*    try {
             lada.passDiagnostics();
         } catch (DiagnosticFailedException e) {
             throw new RuntimeException(e);
-        }
+        } */
         Mechanic mec1 = new Mechanic("Иванов Иван Иванович ", " Быстрый ремонт");
         Mechanic mec2 = new Mechanic("Петров Петр Петрович ", " Любой ремонт");
         Mechanic mec3 = new Mechanic("Васильев Василий Васильевич ", " Быстрый ремонт");
 
+        lada.addMechanic(mec1);
         lada.addMechanic(mec1);
         lada.addMechanic(mec2);
         bmw.addMechanic(mec1);
@@ -80,7 +78,7 @@ public class Main {
 
         for (Transport<?> transport : mechAndDriver) {
             System.out.println(transport + " " + transport.getDriver() + " " + transport.getMechanics());
-        } */
+        }
 
         List<Driver> drivers = new ArrayList<>();
         drivers.add(driverB);
@@ -94,6 +92,8 @@ public class Main {
         Set<Driver> driverSet = new HashSet<>(drivers);
 
         System.out.println(driverSet);
+
+        Map<Transport<?>, Set<Mechanic>> mechanicTransport = new HashMap<>();
     }
 }
 

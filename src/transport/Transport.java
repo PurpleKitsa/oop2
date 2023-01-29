@@ -1,14 +1,16 @@
 package transport;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public abstract class Transport <D extends Driver> implements Competing {
     private final String brand;
     private final String model;
     private double engineVolume;
     private D driver;
-    private final List<Mechanic> mechanics = new ArrayList<>();
+    private final Set<Mechanic> mechanics = new HashSet<>();
 
 
 
@@ -24,7 +26,7 @@ public abstract class Transport <D extends Driver> implements Competing {
         setEngineVolume(engineVolume);
     }
 
-    public List<Mechanic> getMechanics() {
+    public Set<Mechanic> getMechanics() {
         return mechanics;
     }
     public void addMechanic(Mechanic mechanic) {
