@@ -1,10 +1,15 @@
 package transport;
 
-public abstract class Transport <D extends Driver> implements competing {
+import java.util.ArrayList;
+import java.util.List;
+
+public abstract class Transport <D extends Driver> implements Competing {
     private final String brand;
     private final String model;
     private double engineVolume;
     private D driver;
+    private final List<Mechanic> mechanics = new ArrayList<>();
+
 
 
     public Transport(String brand, String model, double engineVolume, D driver) {
@@ -17,6 +22,13 @@ public abstract class Transport <D extends Driver> implements competing {
             model = "default";
         }
         setEngineVolume(engineVolume);
+    }
+
+    public List<Mechanic> getMechanics() {
+        return mechanics;
+    }
+    public void addMechanic(Mechanic mechanic) {
+        mechanics.add(mechanic);
     }
 
     public String getBrand() {
@@ -55,6 +67,7 @@ public abstract class Transport <D extends Driver> implements competing {
     public abstract void startMoved();
     public abstract void finishMoved();
     public abstract void printType();
+    public abstract boolean passDiagnostics() throws  DiagnosticFailedException;
 
 }
 

@@ -1,7 +1,7 @@
 package transport;
 
 public class Bus extends Transport <DriverD> {
-    private static Capacity capacity;
+    private Capacity capacity;
 
     public Bus(String brand, String model, double engineVolume, DriverD driver, Capacity capacity) {
         super(brand, model, engineVolume, driver);
@@ -15,6 +15,7 @@ public class Bus extends Transport <DriverD> {
     public void finishMoved() {
         System.out.println("Автобус " + getBrand() + " закончил движение");
     }
+
 
 
     public enum Capacity {
@@ -72,6 +73,10 @@ public class Bus extends Transport <DriverD> {
             System.out.println("Данных по транспортному средству недостаточно");
         }
         System.out.println("Мест: " + capacity);
+    }
+    @Override
+    public boolean passDiagnostics() {
+        return false;
     }
 }
 
