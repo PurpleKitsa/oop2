@@ -8,10 +8,10 @@ import java.util.Set;
 public class Main {
 
     public static void main(String[] args) {
-         DriverB driverB = new DriverB("Алёшин Михаил Петрович", true,5);
-            DriverB driverB2 = new DriverB("",true,6);
-            DriverB driverB3 = new DriverB("",true,6);
-            DriverB driverB4 = new DriverB("",true,6);
+        DriverB driverB = new DriverB("Алёшин Михаил Петрович", true, 5);
+        DriverB driverB2 = new DriverB("Алёшин Михаил Петрович", true, 5);
+        DriverB driverB3 = new DriverB("", true, 6);
+        DriverB driverB4 = new DriverB("", true, 6);
     /*      Car lada = new Car("lada ", "Vesta", 1.6, driverB);
             Car fiat = new Car("fiat", "turbo", 2.6, driverB2);
             Car porshe = new Car("porshe", "sport", 3.0, driverB3);
@@ -21,10 +21,10 @@ public class Main {
             System.out.println(porshe);
             System.out.println(audi); */
 
-            DriverD driverD = new DriverD("Алексеев Алеклей Алексеевич",true,6);
-            DriverD driverD2 = new DriverD("",true,6);
-            DriverD driverD3 = new DriverD("",true,6);
-            DriverD driverD4 = new DriverD("",true,6);
+        DriverD driverD = new DriverD("Алексеев Алеклей Алексеевич", true, 6);
+        DriverD driverD2 = new DriverD("Алексеев Алеклей Алексеевич", true, 6);
+        DriverD driverD3 = new DriverD("", true, 6);
+        DriverD driverD4 = new DriverD("", true, 6);
     /*      Bus ladaB = new Bus("lada", "Speed", 1.8, driverD);
             Bus mazda = new Bus("mazda", "GTR", 2.0, driverD2);
             Bus nissan = new Bus("nissan", "Sport 2.0", 2.2, driverD3);
@@ -35,10 +35,10 @@ public class Main {
             System.out.println(nissan);
             System.out.println(mitshubishi);  */
 
-            DriverC driverC = new DriverC("Никитин Никита Никитьевич",true,6);
-            DriverC driverC2 = new DriverC("Никитин Алеклей Иванович",true,6);
-            DriverC driverC3 = new DriverC("",true,6);
-            DriverC driverC4 = new DriverC("",true,6);
+        DriverC driverC = new DriverC("Никитин Никита Никитьевич", true, 6);
+        DriverC driverC2 = new DriverC("Никитин Алеклей Иванович", true, 6);
+        DriverC driverC3 = new DriverC("", true, 6);
+        DriverC driverC4 = new DriverC("", true, 6);
     /*        Truck toyota = new Truck("toyota", "cube", 3.7, driverC,);
             Truck bmw = new Truck("bmw", "legacy", 4.0, driverC2);
             Truck jeep = new Truck("jeep", "ultra", 3.9, driverC3);
@@ -84,16 +84,17 @@ public class Main {
 
         List<Driver> drivers = new ArrayList<>();
         drivers.add(driverB);
-        drivers.add(driverB);
+        drivers.add(driverB2);
         drivers.add(driverC);
         drivers.add(driverC2);
         drivers.add(driverD);
+        drivers.add(driverD2);
 
-
+        System.out.println(drivers);
 
         Set<Driver> driverSet = new HashSet<>(drivers);
-
         System.out.println(driverSet);
+
     }
 }
 
