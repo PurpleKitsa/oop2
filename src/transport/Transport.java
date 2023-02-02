@@ -1,14 +1,13 @@
 package transport;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public abstract class Transport <D extends Driver> implements Competing {
     private final String brand;
     private final String model;
     private double engineVolume;
     private D driver;
-    private final List<Mechanic> mechanics = new ArrayList<>();
+    private final Set<Mechanic> mechanics = new HashSet<>();
 
 
 
@@ -24,7 +23,7 @@ public abstract class Transport <D extends Driver> implements Competing {
         setEngineVolume(engineVolume);
     }
 
-    public List<Mechanic> getMechanics() {
+    public Set<Mechanic> getMechanics() {
         return mechanics;
     }
     public void addMechanic(Mechanic mechanic) {
@@ -69,6 +68,18 @@ public abstract class Transport <D extends Driver> implements Competing {
     public abstract void printType();
     public abstract boolean passDiagnostics() throws  DiagnosticFailedException;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Transport<?> transport = (Transport<?>) o;
+        return Double.compare(transport.engineVolume, engineVolume) == 0 && Objects.equals(brand, transport.brand) && Objects.equals(model, transport.model) && Objects.equals(driver, transport.driver) && Objects.equals(mechanics, transport.mechanics);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(brand, model, engineVolume, driver, mechanics);
+    }
 }
 
 
