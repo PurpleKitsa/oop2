@@ -65,12 +65,16 @@ public class Main {
         Mechanic mec1 = new Mechanic("Иванов Иван Иванович ", " Быстрый ремонт");
         Mechanic mec2 = new Mechanic("Петров Петр Петрович ", " Любой ремонт");
         Mechanic mec3 = new Mechanic("Васильев Василий Васильевич ", " Быстрый ремонт");
+        Mechanic mec4 = new Mechanic("Иванов Иван Иванович ", " Быстрый ремонт");
+        Mechanic mec5 = new Mechanic("Васильев Василий Васильевич ", " Быстрый ремонт");
 
         lada.addMechanic(mec1);
-        lada.addMechanic(mec1);
+        lada.addMechanic(mec4);
         lada.addMechanic(mec2);
         bmw.addMechanic(mec1);
-
+        bmw.addMechanic(mec4);
+        bmw.addMechanic(mec3);
+        bmw.addMechanic(mec5);
         List<Transport<?>> mechAndDriver = new ArrayList<>();
 
         mechAndDriver.add(lada);

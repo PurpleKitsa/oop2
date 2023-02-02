@@ -1,9 +1,6 @@
 package transport;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public abstract class Transport <D extends Driver> implements Competing {
     private final String brand;
@@ -71,6 +68,18 @@ public abstract class Transport <D extends Driver> implements Competing {
     public abstract void printType();
     public abstract boolean passDiagnostics() throws  DiagnosticFailedException;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Transport<?> transport = (Transport<?>) o;
+        return Double.compare(transport.engineVolume, engineVolume) == 0 && Objects.equals(brand, transport.brand) && Objects.equals(model, transport.model) && Objects.equals(driver, transport.driver) && Objects.equals(mechanics, transport.mechanics);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(brand, model, engineVolume, driver, mechanics);
+    }
 }
 
 
